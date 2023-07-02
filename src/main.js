@@ -5,7 +5,8 @@ import "ant-design-vue/dist/antd.css";
 import Antd from "ant-design-vue";
 import I18NextVue from "i18next-vue";
 import { i18next } from "./i18n";
+import router from './router'
 
 const app = createApp(App);
 app.use(I18NextVue, { i18next });
-app.use(Antd).mount("#app");
+app.use(Antd).use(router).mount("#app");
