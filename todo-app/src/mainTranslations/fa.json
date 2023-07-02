@@ -1,0 +1,21 @@
+{
+  "sidebar": {
+    "title": "سامانه مدیریت یکپارچه نهاد های مالی",
+    "home": "خانه",
+    "profile": "حساب کاربری",
+    "requests": "درخواست ها",
+    "showRequest": "مشاهده درخواست",
+    "fundActivation": "درخواست فعال سازی صندوق",
+    "kartabel": "کارتابل",
+    "profileInfo": "اطلاعات هویتی",
+    "occupations": "سوابق شغلی",
+    "educations": "سوابق تحصیلی",
+    "dashboard": "خانه",
+    "user-management": "مدیریت کاربران",
+    "users": "کاربران",
+    "roles": "نقش ها",
+    "permissions": "دسترسی ها",
+    "system": "سیستم",
+    "request-log": "لاگ درخواست ها"
+  }
+}
