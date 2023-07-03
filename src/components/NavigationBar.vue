@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { CompassOutlined, UnorderedListOutlined } from "@ant-design/icons-vue";
+import { useRouter } from "vue-router";
 
-const selectedKeys = ref(["todoApp"]);
-const asghar = 2;
+const router = useRouter();
+const selectedKeys = ref([
+  window.location.pathname ? window.location.pathname : "/",
+]);
 </script>
 <template>
   <a-layout class="layout">
@@ -13,13 +16,14 @@ const asghar = 2;
         theme="dark"
         mode="horizontal"
         :style="{ lineHeight: '64px' }"
-        :onchange="(e:any) => console.log(e)"
       >
-        <a-menu-item key="todoApp" class="menu-item"
+        <a-menu-item key="/" class="menu-item" :onclick="() => router.push('/')"
           ><unordered-list-outlined style="margin: 0px 5px" />
           todoApp</a-menu-item
         >
-        <a-menu-item key="weatherDetector"
+        <a-menu-item
+          key="/weather-app"
+          :onclick="() => router.push('/weather-app')"
           ><compass-outlined style="margin: 0px 5px" /> Weather
           Detector</a-menu-item
         >
