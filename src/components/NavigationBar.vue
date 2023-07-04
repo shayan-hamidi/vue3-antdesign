@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { CompassOutlined, UnorderedListOutlined } from "@ant-design/icons-vue";
+import {
+  CompassOutlined,
+  UnorderedListOutlined,
+  UserOutlined,
+} from "@ant-design/icons-vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -18,8 +22,14 @@ const selectedKeys = ref([
         :style="{ lineHeight: '64px' }"
       >
         <a-menu-item key="/" class="menu-item" :onclick="() => router.push('/')"
+          ><User-outlined style="margin: 0px 5px" /> Home</a-menu-item
+        >
+        <a-menu-item
+          key="/todo-app"
+          class="menu-item"
+          :onclick="() => router.push('/todo-app')"
           ><unordered-list-outlined style="margin: 0px 5px" />
-          todoApp</a-menu-item
+          TodoApp</a-menu-item
         >
         <a-menu-item
           key="/weather-app"

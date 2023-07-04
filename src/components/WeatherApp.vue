@@ -10,7 +10,6 @@ interface Option {
   value: string;
   name: string;
 }
-const value = ref("");
 const cityInfo = ref<any>();
 const options = ref<any[]>(cityData);
 const formState = reactive<FormState>({
@@ -72,13 +71,32 @@ const filterOption = (input: string, option: Option) => {
           :xs="24"
           :md="20"
           :lg="12"
-          v-bind:class="
-            cityInfo.main.temp > 75 ? 'with-data-container' : 'sssss'
-          "
+          :class="{
+            hot: cityInfo.main.temp > 75,
+            cold: cityInfo.main.temp < 75,
+          }"
         >
-          <h1 :style="{ marginTop: '10px', fontWeight: 'bold' }">
+          <h1
+            :style="{
+              marginTop: '10px',
+              fontWeight: 'bold',
+              fontSize: '30px',
+              color: 'white',
+              padding: '0px 15px',
+            }"
+          >
             {{ cityInfo.name }}
           </h1>
+          <h2
+            :style="{
+              fontWeight: 'bold',
+              fontSize: '28px',
+              color: 'white',
+              padding: '0px 25px',
+            }"
+          >
+            {{ cityInfo.main.temp }}
+          </h2>
         </a-col>
       </a-row>
       <a-row v-else type="flex" justify="center" class="list-container">
@@ -91,6 +109,18 @@ const filterOption = (input: string, option: Option) => {
   </a-form>
 </template>
 <style scoped>
+.cold {
+  background-image: url("../assets/cold.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hot {
+  background-image: url("../assets/hot.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .with-data-container {
   background-color: rgba(46, 73, 163, 0.1);
   overflow: auto !important;
